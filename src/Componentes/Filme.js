@@ -4,7 +4,7 @@ import axios from "axios";
 export default function Filme() {
   const [filmes, setFilmes] = useState([]);
   useEffect(() => {
-    getMovies()
+    getMovies();
   });
   const getMovies = async () => {
     await axios
@@ -15,7 +15,7 @@ export default function Filme() {
         const allApi = resposta.data.results.map((item) => {
           return {
             ...item,
-            image: `https://image.tmdb.org/t/p/w500/${item.poster_path}`
+            image: `https://image.tmdb.org/t/p/w500/${item.poster_path}`,
           };
         });
         setFilmes(allApi);
@@ -29,7 +29,7 @@ export default function Filme() {
       {filmes.map((item) => (
         <section>
           <img src={item.image} alt={item.title} />
-          <h2>Name: {item.title}</h2>
+          <h2> {item.title}</h2>
         </section>
       ))}
     </div>

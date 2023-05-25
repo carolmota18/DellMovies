@@ -3,6 +3,7 @@ import Header from "./Componentes/Header.js";
 import Filme from "./Componentes/Filme.js";
 import { createGlobalStyle } from "styled-components";
 import Main from "./Componentes/Main.js";
+import NavBar from "./Componentes/NavBar.js";
 
 export const GlobalStyled = createGlobalStyle`
 *{
@@ -19,6 +20,7 @@ export default function App() {
       <GlobalStyled />
       <Header />
       <Main />
+      <NavBar />
       <Filme />
     </div>
   );
