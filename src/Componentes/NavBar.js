@@ -17,7 +17,7 @@ const Conteiner = styled.section`
 `;
 
 const Caixa = styled.div`
-  width: 20%;
+  width: 30%;
   height: 10vh;
   display: flex;
   align-items: center;
