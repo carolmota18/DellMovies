@@ -1,5 +1,42 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+const Conteiner = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  color: blue;
+  background-color: black;
+  color: #f2f2f2;
+`;
+const Titulo = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Open Sans", sans-serif;
+`;
+const Cards = styled.section`
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  h2 {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+  }
+`;
+
+const ImageBox = styled.img`
+  width: 10vw;
+`;
 
 export default function Filme() {
   const [filmes, setFilmes] = useState([]);
@@ -25,13 +62,16 @@ export default function Filme() {
       });
   };
   return (
-    <div>
+    <Conteiner>
+      <Titulo>
+        <h1>Últimos Lançamentos</h1>
+      </Titulo>
       {filmes.map((item) => (
-        <section>
-          <img src={item.image} alt={item.title} />
+        <Cards>
+          <ImageBox src={item.image} alt={item.title} />
           <h2> {item.title}</h2>
-        </section>
+        </Cards>
       ))}
-    </div>
+    </Conteiner>
   );
 }
